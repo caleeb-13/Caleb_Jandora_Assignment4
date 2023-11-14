@@ -24,10 +24,10 @@ namespace Assignment4
                 using (SqlConnection conn = new SqlConnection(connString))
                 {
                     conn.Open();
-                    string query = "EXEC spGetProjects @ResearchID";
+                    string query = "EXEC spGetProjects @ResearchID"; //executes the stored procedure spGetProjects with the parameter ResearchID
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        cmd.Parameters.AddWithValue("@ResearchID", RA);
+                        cmd.Parameters.AddWithValue("@ResearchID", RA); // adds the parameter ResearchID to the stored procedure
                         cmd.ExecuteNonQuery();
 
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
@@ -48,13 +48,13 @@ namespace Assignment4
                 string ResearchID = Request.QueryString["ResearchID"];
                 if (string.IsNullOrEmpty(ResearchID))
                 {
-                    Response.Redirect("ResearchAreas.aspx");
+                    Response.Redirect("ResearchAreas.aspx"); //if there is no research id go back to the research areas page
 
                 }
 
                 else
                 {
-                    ProjectPage.DataSource = GetDataFromDatabase(ResearchID);
+                    ProjectPage.DataSource = GetDataFromDatabase(ResearchID); //if there is a research id get the data from the database
                     ProjectPage.DataBind();
                 }
             }

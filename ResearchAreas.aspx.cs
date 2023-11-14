@@ -15,19 +15,19 @@ namespace Assignment4
         public DataTable GetDataFromDatabase(string instID)
         {
             DataTable dt = new DataTable();
-
+            //connect to our database
             string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ToString();
 
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
-                string query = "EXEC spGetAllResearchAreas @InstID";
+                string query = "EXEC spGetAllResearchAreas @InstID"; //execute the stored procedure with the parameter
                 if (!string.IsNullOrEmpty(instID))
                 {
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
 
-                        cmd.Parameters.AddWithValue("@InstID", instID);
+                        cmd.Parameters.AddWithValue("@InstID", instID); //add the parameter to the query
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                         {
                             da.Fill(dt);
@@ -37,7 +37,7 @@ namespace Assignment4
                 }
                 else
                 {
-                    using (SqlCommand cmd = new SqlCommand("EXEC spSelectAllResearchAreas", conn))
+                    using (SqlCommand cmd = new SqlCommand("EXEC spSelectAllResearchAreas", conn))// if there is no parameter, execute the stored procedure without the parameter
                     {
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                         {
@@ -52,7 +52,7 @@ namespace Assignment4
         {
             if (!IsPostBack)
             {
-                string InstitutionID = Request.QueryString["InstID"];
+                string InstitutionID = Request.QueryString["InstID"]; //get the institution ID from the query string
                 if (!string.IsNullOrEmpty(InstitutionID))
                 {
                     ResearchArea.DataSource = GetDataFromDatabase(InstitutionID);

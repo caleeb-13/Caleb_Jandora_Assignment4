@@ -4,7 +4,7 @@
     <main>
         <asp:Repeater ID="ProjectPage" runat="server">
             <ItemTemplate>
-                <a href="ProjectDetails.aspx?ID=<%# Eval("ProjectID")%>">
+                <a href="ProjectDetails.aspx?ID=<%# Eval("ProjectID")%>"> 
                     <%# Eval("ProjectName") %>
                 </a>
                 <br />

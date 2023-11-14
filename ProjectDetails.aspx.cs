@@ -16,7 +16,7 @@ namespace Assignment4
         public DataTable GetDataFromDatabase()
         {
             DataTable dt = new DataTable();
-
+            //this all pretty much operates the same as all the other pages
             string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ConnectionString;
 
             using (SqlConnection conn = new SqlConnection(connString))
@@ -38,7 +38,7 @@ namespace Assignment4
             string projectID = Request.QueryString["ID"];
             if (string.IsNullOrEmpty(projectID))
             {
-                Response.Redirect("default.aspx");
+                Response.Redirect("default.aspx"); //if empty, go to default page. Default page is still a work in progress, will need updated. However, it was not one of the lankdmarks for this assignment.
             }
             else
             {
@@ -51,9 +51,9 @@ namespace Assignment4
             string connStr = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ToString();
             using (SqlConnection conn = new SqlConnection(connStr))
             {
-                string query = "EXEC spGetSpecificProject @ProjectID";
+                string query = "EXEC spGetSpecificProject @ProjectID"; //executes the stored procedure spGetSpecificProject, which is in the database
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@ProjectID", projectID);
+                cmd.Parameters.AddWithValue("@ProjectID", projectID); //adds the projectID as a parameter to the stored procedure
                 conn.Open();
 
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -69,7 +69,7 @@ namespace Assignment4
                     lblResearchID.Text = reader["ResearchID"].ToString();
                     lblObsCount.Text = reader["ObsCount"].ToString();
 
-
+                    //fill in the info from the database, put it onto the page as seen in the .aspx 
                 }
                 reader.Close();
             }

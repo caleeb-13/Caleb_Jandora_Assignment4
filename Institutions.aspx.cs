@@ -15,9 +15,9 @@ namespace Assignment4
         public DataTable GetDataFromDatabase()
         {
             DataTable dt = new DataTable();
-           
+           //connect to CitizenScienceDB
             string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ConnectionString;
-           
+           //below, create the string that will contain the info from executing my getallinstitutions stored procedure
             using (SqlConnection conn = new SqlConnection(connString))
             {
                 conn.Open();
@@ -25,7 +25,7 @@ namespace Assignment4
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                    
-
+                    //then, fill my datatable with the info from the stored procedure
                     
                     using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                     {
@@ -40,7 +40,7 @@ namespace Assignment4
         {
             if (!IsPostBack)
             {
-
+                //load the page with the data from the database
                 Institution.DataSource = GetDataFromDatabase();
                 Institution.DataBind();
             }
