@@ -37,7 +37,7 @@ namespace Assignment4
                 }
                 else
                 {
-                    using (SqlCommand cmd = new SqlCommand("EXEC spSelectAllResearchAreas", conn))// if there is no parameter, execute the stored procedure without the parameter
+                    using (SqlCommand cmd = new SqlCommand("EXEC spSelectAllResearchAreas", conn))// if there is no parameter, get all the research areas
                     {
                         using (SqlDataAdapter da = new SqlDataAdapter(cmd))
                         {

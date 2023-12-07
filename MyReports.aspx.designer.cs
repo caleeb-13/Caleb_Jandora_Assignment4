@@ -11,16 +11,25 @@ namespace Assignment4
 {
 
 
-    public partial class SiteMaster
+    public partial class MyReports
     {
 
         /// <summary>
-        /// MainContent control.
+        /// MyReportsPanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Panel MyReportsPanel;
+
+        /// <summary>
+        /// ReportsTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater ReportsTable;
     }
 }
