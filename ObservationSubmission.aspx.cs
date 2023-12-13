@@ -69,7 +69,10 @@ namespace Assignment4
          string connString = ConfigurationManager.ConnectionStrings["CitizenScienceDB"].ToString();
             string ReportID = Session["ReportID"] as string;
             string Notes = NotesBox.Text; // this is the notes that the user enters
-            string Value = ValueBox.Text; // this is the value that the user enters
+            string Value = ValueBox.Text;
+            string ToolID = ToolBox.Text;// this is the value that the user enters
+            string Latitude = LatBox.Text;
+            string Longitude = LongBox.Text;
             //i will add the rest of the parts of observation later, I just wanted to get it working for now
             using (SqlConnection conn = new SqlConnection(connString))
             {
@@ -81,7 +84,10 @@ namespace Assignment4
                     cmd.Parameters.Add("@ObservationID", SqlDbType.Int);
                     cmd.Parameters["@ObservationID"].Direction = ParameterDirection.Output;
                     cmd.Parameters.AddWithValue("@Notes", Notes); // take what the user inputs and add it to the database
-                    cmd.Parameters.AddWithValue("@Value", Value); // take what the user inputs and add it to the database
+                    cmd.Parameters.AddWithValue("@Value", Value);
+                    cmd.Parameters.AddWithValue("@ToolID", ToolID);
+                    cmd.Parameters.AddWithValue("@Latitude", Latitude);
+                    cmd.Parameters.AddWithValue("@Longitude", Longitude);// take what the user inputs and add it to the database
                     cmd.ExecuteNonQuery();
                     ObservationSubmissionID.Visible = true;
 

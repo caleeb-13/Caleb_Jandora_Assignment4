@@ -4,8 +4,11 @@
     <main>
         <asp:Panel ID="ObservationSubmissionID" runat="server" Visible="false">
             <h2> Submit an Observation!</h2>
-            Notes: <asp:TextBox ID="NotesBox" runat="server"><</asp:TextBox><br />
-            Value: <asp:TextBox ID="ValueBox" runat="server"><</asp:TextBox><br />
+            Notes: <asp:TextBox ID="NotesBox" runat="server"></asp:TextBox><br />
+            Value: <asp:TextBox ID="ValueBox" runat="server"></asp:TextBox><br />
+            Tool ID: <asp:TextBox ID="ToolBox" runat="server"></asp:TextBox><br />
+            Latitude: <asp:TextBox ID="LatBox" runat="server"></asp:TextBox><br />
+            Longitude: <asp:TextBox ID="LongBox" runat="server"></asp:TextBox><br />
             <asp:Button ID="Submit" runat="server" Text="Submit" OnClick="Submit_Click" />
         </asp:Panel>
         

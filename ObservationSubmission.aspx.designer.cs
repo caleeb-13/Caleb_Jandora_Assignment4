@@ -42,6 +42,33 @@ namespace Assignment4
         protected global::System.Web.UI.WebControls.TextBox ValueBox;
 
         /// <summary>
+        /// ToolBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ToolBox;
+
+        /// <summary>
+        /// LatBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LatBox;
+
+        /// <summary>
+        /// LongBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LongBox;
+
+        /// <summary>
         /// Submit control.
         /// </summary>
         /// <remarks>

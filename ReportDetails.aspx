@@ -35,7 +35,7 @@
                
            
         </asp:Repeater>
-        <a href="ObservationSubmission.aspx" class="btn"> Add Observation</a>
+        <a href="ObservationSubmission.aspx" class="btn btn-primary"> Add Observation</a>
     </asp:Panel>
 </main>
 </asp:Content>

@@ -76,17 +76,14 @@ namespace Assignment4
         }
         protected void btnCreateReport_Click(object sender, EventArgs e)
         {
-            string projectID = Request.QueryString["ID"]; // Assuming the product ID is passed in the query string
-            // Retrieve product ID from the query string
-            ;
-            // Retrieve the selected quantity
+            string projectID = Request.QueryString["ID"]; 
+            
 
 
-            // Store product ID and quantity in the session
+            
             Session["projectID"] = projectID;
 
 
-            // Redirect to the Cart page
             Response.Redirect("ReportDetails.aspx");
         }
     }

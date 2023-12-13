@@ -30,7 +30,7 @@
             <div style="margin-bottom: 10px">
                <div>
                   <asp:Button runat="server" OnClick="SignIn" Text="Log in" />
-                   <a href = "/Register.aspx" class="btn">Register</a>
+                   <a href = "/Register.aspx" class="btn btn-primary">Register</a>
                </div>
             </div>
          </asp:PlaceHolder>

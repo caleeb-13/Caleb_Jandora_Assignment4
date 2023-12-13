@@ -5,7 +5,7 @@
         <asp:Repeater ID="Institution" runat="server">
             <ItemTemplate>
                 <a href="ResearchAreas.aspx?InstID=<%# Eval("InstitutionID")%>">
-                    <%# Eval("InstitutionName") %>
+                    <%# Eval("InstitutionName") %> 
                 </a>
                 <br />
             </ItemTemplate>
